@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Plus, BookOpen, Search, MessageCircle } from 'lucide-react';
+import { Plus, BookOpen, Search } from 'lucide-react';
 import { supabase, type Recipe } from './lib/supabase';
 import RecipeForm, { type RecipeFormData } from './components/RecipeForm';
 import RecipeCard from './components/RecipeCard';
 import RecipeDetail from './components/RecipeDetail';
-import RecipeChat from './components/RecipeChat';
-
-type Page = 'recipes' | 'chat';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('recipes');
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -82,10 +78,6 @@ function App() {
 
   const categories = ['all', 'breakfast', 'lunch', 'dinner', 'dessert', 'appetizer', 'snack', 'drink', 'other'];
 
-  if (currentPage === 'chat') {
-    return <RecipeChat onBack={() => setCurrentPage('recipes')} />;
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
@@ -102,25 +94,16 @@ function App() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => setCurrentPage('chat')}
-                className="flex items-center gap-2 bg-gray-200 hover:bg-gray-300 text-gray-900 px-5 py-2 rounded-lg font-medium transition-all"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Chef AI
-              </button>
-              <button
-                onClick={() => {
-                  setEditingRecipe(null);
-                  setShowForm(true);
-                }}
-                className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                <Plus className="w-5 h-5" />
-                Add Recipe
-              </button>
-            </div>
+            <button
+              onClick={() => {
+                setEditingRecipe(null);
+                setShowForm(true);
+              }}
+              className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              <Plus className="w-5 h-5" />
+              Add Recipe
+            </button>
           </div>
         </div>
       </header>
