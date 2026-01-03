@@ -20,9 +20,9 @@ export default function RecipeCard({ recipe, onClick, onDelete }: RecipeCardProp
   return (
     <div
       onClick={onClick}
-      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden group border border-nbc-cream"
+      className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden group"
     >
-      <div className="relative h-48 bg-gradient-to-br from-nbc-cream to-nbc-yellow overflow-hidden">
+      <div className="relative h-48 bg-gradient-to-br from-orange-100 to-amber-100 overflow-hidden">
         {recipe.image_url ? (
           <img
             src={recipe.image_url}
@@ -31,16 +31,16 @@ export default function RecipeCard({ recipe, onClick, onDelete }: RecipeCardProp
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <ChefHat className="w-20 h-20 text-nbc-tan" />
+            <ChefHat className="w-20 h-20 text-orange-300" />
           </div>
         )}
         <div className="absolute top-3 right-3 flex gap-2">
-          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-nbc-brown capitalize">
+          <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-700 capitalize">
             {recipe.category}
           </span>
           <button
             onClick={handleDelete}
-            className="p-2 bg-nbc-brown/90 backdrop-blur-sm rounded-full hover:bg-nbc-orange transition-colors"
+            className="p-2 bg-red-500/90 backdrop-blur-sm rounded-full hover:bg-red-600 transition-colors"
           >
             <Trash2 className="w-4 h-4 text-white" />
           </button>
@@ -48,17 +48,17 @@ export default function RecipeCard({ recipe, onClick, onDelete }: RecipeCardProp
       </div>
 
       <div className="p-5">
-        <h3 className="text-xl font-bold text-nbc-brown mb-2 line-clamp-1 group-hover:text-nbc-orange transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-orange-600 transition-colors">
           {recipe.title}
         </h3>
 
         {recipe.description && (
-          <p className="text-nbc-tan text-sm mb-4 line-clamp-2">
+          <p className="text-gray-600 text-sm mb-4 line-clamp-2">
             {recipe.description}
           </p>
         )}
 
-        <div className="flex items-center gap-4 text-sm text-nbc-tan">
+        <div className="flex items-center gap-4 text-sm text-gray-500">
           {totalTime > 0 && (
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4" />

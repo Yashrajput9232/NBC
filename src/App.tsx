@@ -79,17 +79,17 @@ function App() {
   const categories = ['all', 'breakfast', 'lunch', 'dinner', 'dessert', 'appetizer', 'snack', 'drink', 'other'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-nbc-cream via-nbc-yellow to-nbc-cream">
-      <header className="bg-white shadow-sm border-b-4 border-nbc-orange sticky top-0 z-10">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+      <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-gradient-to-br from-nbc-orange to-nbc-tan rounded-2xl shadow-lg">
+              <div className="p-3 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl shadow-lg">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold text-nbc-brown">NBC Ka Khana</h1>
-                <p className="text-nbc-tan text-sm mt-1">
+                <h1 className="text-3xl font-bold text-gray-900">NBC Ka Khana</h1>
+                <p className="text-gray-600 text-sm mt-1">
                   {recipes.length} {recipes.length === 1 ? 'recipe' : 'recipes'} in your collection
                 </p>
               </div>
@@ -99,7 +99,7 @@ function App() {
                 setEditingRecipe(null);
                 setShowForm(true);
               }}
-              className="flex items-center gap-2 bg-gradient-to-r from-nbc-orange to-nbc-tan text-white px-6 py-3 rounded-xl font-semibold hover:from-nbc-brown hover:to-nbc-orange shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-orange-600 hover:to-amber-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <Plus className="w-5 h-5" />
               Add Recipe
@@ -111,13 +111,13 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8 space-y-4">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-nbc-tan" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search recipes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border-2 border-nbc-tan bg-white rounded-xl focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all placeholder-nbc-tan"
+              className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
             />
           </div>
 
@@ -128,8 +128,8 @@ function App() {
                 onClick={() => setFilterCategory(category)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all capitalize ${
                   filterCategory === category
-                    ? 'bg-nbc-orange text-white shadow-md'
-                    : 'bg-white text-nbc-brown hover:bg-nbc-cream border-2 border-nbc-tan'
+                    ? 'bg-orange-500 text-white shadow-md'
+                    : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
                 }`}
               >
                 {category}
@@ -140,15 +140,15 @@ function App() {
 
         {loading ? (
           <div className="flex items-center justify-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-nbc-orange"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
           </div>
         ) : filteredRecipes.length === 0 ? (
           <div className="text-center py-20">
-            <BookOpen className="w-16 h-16 text-nbc-tan mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-nbc-brown mb-2">
+            <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
               {searchQuery || filterCategory !== 'all' ? 'No recipes found' : 'No recipes yet'}
             </h3>
-            <p className="text-nbc-tan mb-6">
+            <p className="text-gray-600 mb-6">
               {searchQuery || filterCategory !== 'all'
                 ? 'Try adjusting your search or filters'
                 : 'Start building your recipe collection by adding your first recipe'}
@@ -159,7 +159,7 @@ function App() {
                   setEditingRecipe(null);
                   setShowForm(true);
                 }}
-                className="inline-flex items-center gap-2 bg-nbc-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-nbc-brown transition-all"
+                className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all"
               >
                 <Plus className="w-5 h-5" />
                 Add Your First Recipe

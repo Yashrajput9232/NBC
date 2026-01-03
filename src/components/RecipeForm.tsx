@@ -137,21 +137,21 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="sticky top-0 bg-white border-b-2 border-nbc-orange px-6 py-4 flex items-center justify-between rounded-t-2xl">
-          <h2 className="text-2xl font-bold text-nbc-brown">
+        <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-2xl">
+          <h2 className="text-2xl font-bold text-gray-900">
             {isEditing ? 'Edit Recipe' : 'Add New Recipe'}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-nbc-cream rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
-            <X className="w-6 h-6 text-nbc-brown" />
+            <X className="w-6 h-6 text-gray-600" />
           </button>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           <div>
-            <label className="block text-sm font-semibold text-nbc-brown mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Recipe Title *
             </label>
             <input
@@ -160,13 +160,13 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
               value={formData.title}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               placeholder="e.g., Grandma's Chocolate Chip Cookies"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-nbc-brown mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Description
             </label>
             <textarea
@@ -174,13 +174,13 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
               value={formData.description}
               onChange={handleChange}
               rows={3}
-              className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
               placeholder="A brief description of your recipe..."
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-nbc-brown mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Source Link (optional)
             </label>
             <input
@@ -188,21 +188,21 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
               name="source_link"
               value={formData.source_link || ''}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               placeholder="e.g., https://instagram.com/... or recipe blog link"
             />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-nbc-brown mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Category
               </label>
               <select
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               >
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
@@ -216,7 +216,7 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-nbc-brown mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Servings
               </label>
               <input
@@ -225,14 +225,14 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
                 value={formData.servings}
                 onChange={handleChange}
                 min="1"
-                className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-nbc-brown mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Prep Time (minutes)
               </label>
               <input
@@ -242,12 +242,12 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
                 onChange={handleChange}
                 min="0"
                 placeholder="e.g., 15"
-                className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-nbc-brown mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Cook Time (minutes)
               </label>
               <input
@@ -257,18 +257,18 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
                 onChange={handleChange}
                 min="0"
                 placeholder="e.g., 30"
-                className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-nbc-brown mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Recipe Photo (optional)
             </label>
             <div className="space-y-3">
               {imagePreview ? (
-                <div className="relative h-48 bg-nbc-cream rounded-lg overflow-hidden">
+                <div className="relative h-48 bg-gray-100 rounded-lg overflow-hidden">
                   <img
                     src={imagePreview}
                     alt="Preview"
@@ -278,7 +278,7 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
                     type="button"
                     onClick={handleRemoveImage}
                     disabled={isUploading}
-                    className="absolute top-2 right-2 p-2 bg-nbc-brown text-white rounded-full hover:bg-nbc-orange transition-colors disabled:opacity-50"
+                    className="absolute top-2 right-2 p-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors disabled:opacity-50"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -293,18 +293,18 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
                   disabled={isUploading}
-                  className="w-full px-4 py-6 border-2 border-dashed border-nbc-tan rounded-lg hover:border-nbc-orange hover:bg-nbc-cream transition-all flex flex-col items-center gap-2 text-nbc-tan hover:text-nbc-orange disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-6 border-2 border-dashed border-orange-300 rounded-lg hover:border-orange-500 hover:bg-orange-50 transition-all flex flex-col items-center gap-2 text-gray-600 hover:text-orange-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isUploading ? (
                     <>
-                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-nbc-orange"></div>
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-orange-500"></div>
                       <span className="text-sm font-medium">Uploading...</span>
                     </>
                   ) : (
                     <>
                       <Upload className="w-6 h-6" />
                       <span className="text-sm font-medium">Click to upload image</span>
-                      <span className="text-xs text-nbc-tan">or drag and drop</span>
+                      <span className="text-xs text-gray-500">or drag and drop</span>
                     </>
                   )}
                 </button>
@@ -316,12 +316,12 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
                 onChange={handleFileSelect}
                 className="hidden"
               />
-              <p className="text-xs text-nbc-tan">Max file size: 5MB. Supports JPG, PNG, GIF, WebP</p>
+              <p className="text-xs text-gray-500">Max file size: 5MB. Supports JPG, PNG, GIF, WebP</p>
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-nbc-brown mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Ingredients *
             </label>
             <textarea
@@ -330,13 +330,13 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
               onChange={handleChange}
               required
               rows={6}
-              className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all resize-none font-mono text-sm"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none font-mono text-sm"
               placeholder="List ingredients one per line:&#10;2 cups flour&#10;1 cup sugar&#10;3 eggs"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-nbc-brown mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Instructions *
             </label>
             <textarea
@@ -345,7 +345,7 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
               onChange={handleChange}
               required
               rows={8}
-              className="w-full px-4 py-3 border-2 border-nbc-tan rounded-lg focus:ring-2 focus:ring-nbc-orange focus:border-nbc-orange transition-all resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all resize-none"
               placeholder="Write step-by-step instructions..."
             />
           </div>
@@ -354,14 +354,14 @@ export default function RecipeForm({ onSubmit, onClose, initialRecipe, isEditing
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 bg-nbc-orange text-white py-3 px-6 rounded-lg font-semibold hover:bg-nbc-brown focus:ring-4 focus:ring-nbc-yellow transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 bg-orange-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-orange-600 focus:ring-4 focus:ring-orange-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (isEditing ? 'Saving...' : 'Adding Recipe...') : (isEditing ? 'Save Changes' : 'Add Recipe')}
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-3 border-2 border-nbc-tan rounded-lg font-semibold text-nbc-brown hover:bg-nbc-cream transition-all"
+              className="px-6 py-3 border border-gray-300 rounded-lg font-semibold text-gray-700 hover:bg-gray-50 transition-all"
             >
               Cancel
             </button>
